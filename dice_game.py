@@ -1,4 +1,12 @@
+import random
 from tkinter import *
+
+
+def brosok():
+    random_cube = random.choice(
+        ['b.png', 'b2.png', 'b3.png', 'b4.png', 'b5.png', 'b6.png']
+    )
+    return random_cube
 
 
 root = Tk()
