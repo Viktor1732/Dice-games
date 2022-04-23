@@ -1,4 +1,5 @@
 import random
+import time
 from tkinter import *
 
 
@@ -10,10 +11,13 @@ def brosok():
 
 def img(event):
     global cube1, cube2
-    cube1 = PhotoImage(file=(brosok()))
-    cube2 = PhotoImage(file=(brosok()))
-    lab1['image'] = cube1
-    lab2['image'] = cube2
+    for i in range(10):
+        cube1 = PhotoImage(file=(brosok()))
+        cube2 = PhotoImage(file=(brosok()))
+        lab1['image'] = cube1
+        lab2['image'] = cube2
+        root.update()
+        time.sleep(0.12)
 
 root = Tk()
 root.title('Dice game! Make a throw!')
@@ -27,4 +31,5 @@ lab2 = Label(root)
 lab1.place(relx=0.3, rely=0.5, anchor=CENTER)
 lab2.place(relx=0.7, rely=0.5, anchor=CENTER)
 root.bind('<1>', img)
+img('event')
 root.mainloop()
