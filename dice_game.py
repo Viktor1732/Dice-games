@@ -8,6 +8,12 @@ def brosok():
     )
     return random_cube
 
+def img(event):
+    global cube1, cube2
+    cube1 = PhotoImage(file=(brosok()))
+    cube2 = PhotoImage(file=(brosok()))
+    lab1['image'] = cube1
+    lab2['image'] = cube2
 
 root = Tk()
 root.title('Dice game! Make a throw!')
@@ -20,4 +26,5 @@ lab1 = Label(root)
 lab2 = Label(root)
 lab1.place(relx=0.3, rely=0.5, anchor=CENTER)
 lab2.place(relx=0.7, rely=0.5, anchor=CENTER)
+root.bind('<1>', img)
 root.mainloop()
